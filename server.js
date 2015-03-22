@@ -76,7 +76,7 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
                 //console.log("DEBUG: " + projets)
             }
         }
-        res.render('user.ejs', { session: req.session, projets: projets})
+        res.render('user.ejs', { session: req.session, pseudo: req.params.pseudo, projets: projets})
     })
 })
 
