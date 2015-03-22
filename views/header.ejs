@@ -28,8 +28,9 @@
                     <li class="active"><a href="/">Accueil</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <% if (typeof(session.pseudo) != undefined){ %>
+                    <% if (typeof(session.pseudo) != undefined && typeof(session.pseudo) != "undefined"){ %>
                         <li><a href="/<%=session.pseudo%>"><%=session.pseudo%></a></li>
+                        <li><a href="/logout" role="button"><i class="glyphicon glyphicon-log-out"></i></a></li>
                     <% }else{ %>
                         <li><a href="/login">Connexion</a></li>
                     <% } %>

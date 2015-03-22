@@ -30,7 +30,7 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
 })
 
 .get('/login', function(req, res){
-    if (typeof(req.session.pseudo) != undefined) {
+    if (typeof(req.session.pseudo) != undefined && typeof(req.session.pseudo) != "undefined") {
         res.redirect('/')
     }else{
         res.render('login.ejs', { session: req.session })
@@ -57,6 +57,11 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
     })
 
     //console.log("Email: " + email + " Mot de passe: " + password + " Remember me: " + rememberme)
+})
+
+.get('/logout', function(req, res){
+    req.session = null
+    res.redirect('/')
 })
 
 .get('/:pseudo', function(req, res){
