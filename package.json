@@ -12,6 +12,6 @@
     "description": "Live code est une application de code collaboratif en ligne",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nodejitsu/browsenpm.org"
-    },
+        "url": "https://github.com/MisterTakaashi/Live-Code-Project"
+    }
 }
