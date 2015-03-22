@@ -28,7 +28,11 @@
                     <li class="active"><a href="/">Accueil</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login">Connexion</a></li>
+                    <% if (typeof(session.pseudo) != undefined){ %>
+                        <li><a href="/<%=session.pseudo%>"><%=session.pseudo%></a></li>
+                    <% }else{ %>
+                        <li><a href="/login">Connexion</a></li>
+                    <% } %>
                 </ul>
             </div>
         </div>

@@ -1,3 +1,9 @@
 .corpus {
   padding: 60px 15px;
 }
+#connectionfailed{
+    display: none;
+}
+#connectionfailed:target{
+    display: block;
+}
