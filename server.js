@@ -13,6 +13,12 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
 
 .use(express.static(__dirname + '/static'))
 
+.get('/', function(req, res){
+    res.render('index.ejs')
+})
 
+.get('/login', function(req, res){
+    res.render('login.ejs')
+})
 
 app.listen(8080)

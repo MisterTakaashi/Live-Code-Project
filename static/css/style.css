@@ -1,34 +1,3 @@
-#listeBugs ul li{
-    list-style-type: none;
-}
-#listeBugs ul{
-    margin: 0;
-    padding: 0;
-}
-#listeBugs a:hover{
-    text-decoration: none;
-}
-#connexion button{
-    float: right;
-}
-#ajouterEtape{
-    float: right;
-}
-#describBugs h3{
-    margin-top: 0;
-}
-.bug{
-    padding: 10px;
-}
-.bug:hover{
-    background: #f7f7f7;
-}
-
-@media (min-width: 768px){
-    #connexion button{
-        float: none;
-    }
-    #ajouterEtape{
-        float: none;
-    }
+.corpus {
+  padding: 60px 15px;
 }
