@@ -1,0 +1,17 @@
+{
+    "name": "live-code",
+    "version": "0.1.0",
+    "dependencies": {
+        "express": "~4.11.0",
+        "ejs": "~2.1.4",
+        "body-parser": "~1.12.2",
+        "cookie-session": "~1.1.0",
+        "js-sha256": "~0.2.3"
+    },
+    "author": "MisterTakaashi",
+    "description": "Live code est une application de code collaboratif en ligne",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodejitsu/browsenpm.org"
+    },
+}
