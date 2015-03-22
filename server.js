@@ -65,7 +65,23 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
 })
 
 .get('/:pseudo', function(req, res){
-    res.render('user.ejs', { session: req.session })
+    var pseudo = mysql.escape(req.params.pseudo)
+    var projets = new Array();
+
+    connection.query('SELECT * FROM projets NATURAL JOIN users WHERE USR_CH_PSEUDO = ' + pseudo, function(err, rows){
+        if(rows.length != 0){
+            for (var i = 0; i < rows.length; i++) {
+                var projet = {id: rows[i].PRJ_N_ID, name: rows[i].PRJ_CH_NAME, description: rows[i].PRJ_CH_DESCRIPTION, folder: rows[i].PRJ_CH_FOLDER}
+                projets.push(projet)
+                //console.log("DEBUG: " + projets)
+            }
+        }
+        res.render('user.ejs', { session: req.session, projets: projets})
+    })
+})
+
+.get('/:pseudo/:projet', function(req, res){
+    res.render('projet.ejs', { session: req.session })
 })
 
 app.listen(8080)
