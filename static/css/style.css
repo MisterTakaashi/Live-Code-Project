@@ -1,6 +1,14 @@
 .corpus {
   padding: 60px 15px;
 }
+.corpus-code {
+  padding: 50px 0;
+}
+.corpus-code pre{
+    margin: 0;
+    border-radius: 0;
+    border: solid 0 transparent;
+}
 #connectionfailed{
     display: none;
 }
