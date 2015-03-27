@@ -2,7 +2,7 @@
   padding: 60px 15px;
 }
 .corpus-code {
-  padding: 50px 0;
+  padding-top: 50px;
 }
 .corpus-code pre{
     margin: 0;
@@ -14,4 +14,11 @@
 }
 #connectionfailed:target{
     display: block;
+}
+#editor {
+    height: 600px;
+    width: 100%;
+}
+.ace_search_field{
+    color: black;
 }

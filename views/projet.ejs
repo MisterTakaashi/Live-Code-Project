@@ -5,9 +5,19 @@
         }
     </style>
     <div class="corpus-code">
-        <pre><code class="language-css">
+        <!--<pre><code class="language-css" contenteditable id="textarea">
 p { color: red; }
 body { background: black; }</code>
-        </pre>
+        </pre>-->
+<pre id="editor"><%= files[0].contenu %></pre>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.getSession().setMode("ace/mode/html");
+
+            $("#editor").ready(function(){
+                $("#editor").height($(document).height() - 70)
+            })
+        </script>
     </div>
 <% include footer %>

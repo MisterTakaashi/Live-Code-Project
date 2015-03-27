@@ -81,7 +81,21 @@ app.use(session({ secret: 's3cr3tind3chiffrabl3' }))
 })
 
 .get('/:pseudo/:projet', function(req, res){
-    res.render('projet.ejs', { session: req.session })
+    filesProject = new Array();
+    var link = "/static/workspaces/MisterTakaashi/Projects/Projet-1/";
+
+    fs.readdir(__dirname + link, function(err, files){
+        for (var i = 0; i < files.length; i++) {
+            //console.log(__dirname + link + files[i])
+
+            var contenu = fs.readFileSync(__dirname + link + files[i], 'utf8');
+
+            //console.log(contenu);
+            infoFile = {"link": link + files[i], "extension": files[i].split('.')[1], "contenu": contenu}
+            filesProject.push(infoFile);
+        }
+        res.render('projet.ejs', { session: req.session, files: filesProject })
+    })
 })
 
 app.listen(8080)
